@@ -67,10 +67,8 @@ const SectionControl = (props:ISectionControlProps)=> {
         setControlValue(false)
     }
     function handleExpandSectionsEvent(e:CustomEvent){
-        console.log(e);
-        console.log(e.detail);
         const expandArray:Array<string>|null = e.detail;
-        if(expandArray?.includes(`${context?.parameters.controllerValue.attributes?.LogicalName}_pcf_control`)){
+        if(expandArray?.includes(`${context?.parameters.controllerValue.attributes?.LogicalName}`)){
             setControlValue(true);
         }
     }
