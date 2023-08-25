@@ -99,7 +99,7 @@ const SectionControl = (props:ISectionControlProps)=> {
     },[])
 
     return(
-        <div style={{color:color, borderBottom:'1px solid', borderColor:'rgb(237,235,233)',fontFamily:'SegoeUI-Semibold',display:'flex',alignItems:"center",boxSizing:"border-box", width:"100%"}} tabIndex={0} ref={controlRef} onClick={()=>setControlValue(!controlValue)} id={`${context?.parameters.controllerValue.attributes?.LogicalName}_pcf_control`} aria-label={userLang === 1036? frLabel : engLabel} onKeyUp={handleAccessibilityKeyupEvent}>
+        <div style={{color:color, borderBottom:'1px solid', borderColor:'rgb(237,235,233)',fontFamily:'SegoeUI-Semibold',display:'flex',alignItems:"center",boxSizing:"border-box", width:"100%"}} tabIndex={0} ref={controlRef} onClick={()=>setControlValue(!controlValue)} id={`${context?.parameters.controllerValue.attributes?.LogicalName}_pcf_control`} aria-label={userLang === 1036? frLabel : engLabel} onKeyUp={handleAccessibilityKeyupEvent} title={userLang === 1036? frLabel : engLabel}>
             {
                 controlValue?
                 <Icon iconName='CaretDownSolid8'/> :
