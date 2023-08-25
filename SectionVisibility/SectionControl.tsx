@@ -2,9 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import { IInputs } from "./generated/ManifestTypes";
 import { Icon } from '@fluentui/react';
 
-interface CustomEvent extends Event {
-    detail:string[]
-}
 export type ISectionControlProps = {
     context?: ComponentFramework.Context<IInputs>;
     onChange:(bool:boolean) => void;
@@ -71,6 +68,7 @@ const SectionControl = (props:ISectionControlProps)=> {
     }
     function handleExpandSectionsEvent(e:CustomEvent){
         console.log(e);
+        console.log(e.detail);
         const expandArray:Array<string>|null = e.detail;
         if(expandArray?.includes(`${context?.parameters.controllerValue.attributes?.LogicalName}_pcf_control`)){
             setControlValue(true);
@@ -79,7 +77,7 @@ const SectionControl = (props:ISectionControlProps)=> {
     function registerExternalExpandCollapseListeners(){
         window.top?.addEventListener("expandall",handleExpandAllEvent)
         window.top?.addEventListener("collapseall",handleCollapseAllEvent)
-        window.top?.addEventListener<any>("expandsections",((e:CustomEvent)=> {handleExpandSectionsEvent(e)}))
+        window.top?.addEventListener<any>("expandsections",handleExpandSectionsEvent)
         window.document.addEventListener("expandall",(e)=>console.log("expand"))
         window.document.addEventListener("collapseall",(e)=>console.log("collapse"))
         window.document.addEventListener("expandsections",(e)=>console.log("section"))
