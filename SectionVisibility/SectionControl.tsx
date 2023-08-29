@@ -67,7 +67,6 @@ const SectionControl = (props:ISectionControlProps)=> {
         setControlValue(false)
     }
     function handleExpandSectionsEvent(e:CustomEvent){
-        console.log(e);
         const expandArray:Array<string>|null = e.detail;
         if(expandArray?.includes(`${context?.parameters.controllerValue.attributes?.LogicalName}`)){
             setControlValue(true);
@@ -77,9 +76,6 @@ const SectionControl = (props:ISectionControlProps)=> {
         window.top?.addEventListener("expandall",handleExpandAllEvent)
         window.top?.addEventListener("collapseall",handleCollapseAllEvent)
         window.top?.addEventListener<any>("expandsections",handleExpandSectionsEvent)
-        window.document.addEventListener("expandall",(e)=>console.log("expand"))
-        window.document.addEventListener("collapseall",(e)=>console.log("collapse"))
-        window.document.addEventListener("expandsections",(e)=>console.log("section"))
     }
   
     useEffect(()=>{
