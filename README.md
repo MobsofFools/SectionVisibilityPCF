@@ -27,9 +27,9 @@ Ensure you have the following installed:
 ---
 
 ### 2. Clone the Repository
-```bash```
-```git clone https://github.com/<your-org>/section-visibility-pcf.git```
-```cd section-visibility-pcf```
+git clone https://github.com/<your-org>/section-visibility-pcf.git
+cd section-visibility-pcf
+
 ### 3. Install Dependencies
 npm install```
 
