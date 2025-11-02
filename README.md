@@ -31,7 +31,7 @@ git clone https://github.com/<your-org>/section-visibility-pcf.git
 cd section-visibility-pcf
 
 ### 3. Install Dependencies
-npm install```
+npm install
 
 ### 4. Build the PCF Control
 npm run build
