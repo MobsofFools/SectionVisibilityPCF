@@ -52,14 +52,4 @@ Open your Model-driven app form designer.
 
 Add the Section Visibility PCF control to a form (recommended: on a hidden field or placeholder).
 
-Configure the control’s properties:
-
-Target Section Name: Logical name of the section to toggle.
-
-Trigger Field(s): Field(s) whose values control visibility.
-
-Condition Logic: Equals, Not Equals, Contains, etc.
-
-Visible When True: Determines whether the section shows or hides when condition is met.
-
 Save and publish your form.
